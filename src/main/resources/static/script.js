@@ -1,4 +1,3 @@
-// const todos = [];
 async function list(){
     let res = await fetch("/api/todos");
     data = await res.json();
