@@ -1,4 +1,3 @@
-// const todos = [];
 async function list(){
     let res = await fetch("/api/todos");
     data = await res.json();
@@ -48,7 +47,6 @@ async function addTodo(data){
     list();
 }
 
-
 async function finished(item){
     let id = item.id;
     let done;
@@ -91,7 +89,6 @@ async function deleteTodo(item){
     item.remove();
 
 }
-
 document.querySelector('#todos').addEventListener('mousedown', (event) =>{
     if(event.which == 3 || event.button == 2){
         deleteTodo(event.target);
@@ -99,7 +96,6 @@ document.querySelector('#todos').addEventListener('mousedown', (event) =>{
         finished(event.target);
     }
 });
-
 window.oncontextmenu = function (){
     return false;
 };
